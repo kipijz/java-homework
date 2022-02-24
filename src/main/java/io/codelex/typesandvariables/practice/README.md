@@ -82,7 +82,7 @@ Input seconds: 23
 Expected Output :
 Your speed in meters/second is 0.11691531 
 Your speed in km/h is 0.42089513 
-Your speed in miles/h is 0.26158804
+Your speed in miles/h is 0.26158801
 ```
 
 ## Exercise #10

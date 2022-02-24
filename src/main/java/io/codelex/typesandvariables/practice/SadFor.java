@@ -8,12 +8,12 @@ public class SadFor {
     }
 
     public static int test1() {
-//fixme
-//        for (int i = 0; i < 10; i++) {
-//            if (Math.sqrt(i) > 2.5)
-//                break;
-//        }
-//        return i;
-        throw new NoCodeWrittenException();
+        int answer = 0;
+        for (int i = 0; i < 10; i++) {
+            if (Math.sqrt(i) > 2.5) {
+                answer = i;
+            }
+        }
+        return answer;
     }
 }

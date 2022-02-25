@@ -55,7 +55,7 @@ public class CalculateArea {
 
     public static void calculateCircleArea() {
 
-        BigDecimal radius = ZERO;
+        BigDecimal radius = BigDecimal.valueOf(40);
 
         // Get input from user
         Scanner keyboard = new Scanner(System.in);
@@ -69,8 +69,8 @@ public class CalculateArea {
     }
 
     public static void calculateRectangleArea() {
-        BigDecimal length = ZERO;
-        BigDecimal width = ZERO;
+        BigDecimal length = BigDecimal.valueOf(30);
+        BigDecimal width = BigDecimal.valueOf(30);
 
         // Get input from user
         Scanner keyboard = new Scanner(System.in);
@@ -87,12 +87,12 @@ public class CalculateArea {
 
         // Display output
         System.out.println("The rectangle's area is "
-                + Geometry.areaOfTriangle(length, width));
+                + Geometry.areaOfRectangle(length, width));
     }
 
     public static void calculateTriangleArea() {
-        BigDecimal base = ZERO;
-        BigDecimal height = ZERO;
+        BigDecimal base = BigDecimal.valueOf(30);
+        BigDecimal height = BigDecimal.valueOf(30);
 
         // Get input from user
         Scanner keyboard = new Scanner(System.in);
@@ -109,6 +109,6 @@ public class CalculateArea {
 
         // Display the triangle's area.
         System.out.println("The triangle's area is "
-                + Geometry.areaOfRectangle(base, height));
+                + Geometry.areaOfTriangle(base, height));
     }
 }

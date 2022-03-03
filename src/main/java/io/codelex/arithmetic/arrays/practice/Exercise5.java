@@ -9,21 +9,19 @@ public class Exercise5 {
         int indexOfElement36 = -1;
         int indexOfElement29 = -1;
 
-        /*
-        fixme
-        for (?) {
-            
-        }
-        */
+//        fixme
 
-        //Expected output:
-        //Index position of 36 is: 4
-        //Index position of 29 is: 8
+        for (int i = 0; i < myArray.length; i++) {
+            if (myArray[i] == 36) indexOfElement36 = i;
+            else if (myArray[i] == 29) indexOfElement29 = i;
+        }
+
+//        Expected output:
+//        Index position of 36 is: 4
+//        Index position of 29 is: 8
         
-        /*
-        fixme
+//        fixme
         System.out.println("Index position of 36 is: " + indexOfElement36);
         System.out.println("Index position of 29 is: " + indexOfElement29);
-        */
     }
 }

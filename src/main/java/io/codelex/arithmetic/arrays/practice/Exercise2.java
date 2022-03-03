@@ -1,6 +1,7 @@
 package io.codelex.arithmetic.arrays.practice;
 
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class Exercise2 {
 
@@ -15,15 +16,22 @@ public class Exercise2 {
         System.out.println("Please enter a max number");
         int maxNumber = input.nextInt();
 
-        int myArray[];
+        int[] myArray = new int[maxNumber - minNumber + 1];
+        int index = 0;
         int sum = 0;
 
-        /*
-        fixme
-        for (........) {
-        ........
+//        fixme
+
+/*        for (int i = minNumber; i <= maxNumber; i++) {
+            sum += i;
+        }*/
+
+        for (int i = minNumber; i <= maxNumber; i++) {
+            myArray[index] = i;
+            index++;
         }
-        */
+
+        sum = IntStream.of(myArray).sum();
 
         System.out.println("The sum is " + sum);
     }

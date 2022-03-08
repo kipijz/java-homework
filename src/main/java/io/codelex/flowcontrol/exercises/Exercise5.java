@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class Exercise5 {
     public static void main(String[] args) {
-        PhoneKeyPad();
+        phoneKeyPad();
     }
 
-    public static void PhoneKeyPad() {
+    private static void phoneKeyPad() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter a string: ");

@@ -1,4 +1,4 @@
-package io.codelex.flowcontrol.practice;
+package io.codelex.flowcontrol.exercises.practice;
 
 import java.util.Scanner;
 
@@ -22,7 +22,9 @@ public class LargestNumber {
         int largestNumb = num1;
 
         for (int i = 0; i < numberArray.length; i++) {
-            if (largestNumb < numberArray[i]) largestNumb = numberArray[i];
+            if (largestNumb < numberArray[i]) {
+                largestNumb = numberArray[i];
+            }
         }
 
         System.out.println("The largest number is: " + largestNumb);

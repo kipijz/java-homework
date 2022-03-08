@@ -1,5 +1,6 @@
 package io.codelex.loops.exercises;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Exercise7 {
@@ -21,7 +22,6 @@ public class Exercise7 {
                 if (randomNumberHolder == 1) {
                     System.out.println("You rolled a " + randomNumberHolder + "!");
                     System.out.println("You got 0 points.");
-                    points = 0;
                     break;
                 } else {
                     System.out.println("You rolled a " + randomNumberHolder + "!");
@@ -34,7 +34,8 @@ public class Exercise7 {
         }
     }
 
-    public static int piglet() {
-        return (int) ((Math.random() * 6) + 1);
+    private static int piglet() {
+        Random randomno = new Random();
+        return randomno.nextInt(6) + 1;
     }
 }

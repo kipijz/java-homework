@@ -12,22 +12,30 @@ public class Exercise9 {
         System.out.print("Desired sum: ");
         int userInput = scanner.nextInt();
 
-        Random diceRoll = new Random();
+        firstRoll = roll();
+        secondRoll = roll();
 
-        firstRoll = diceRoll.nextInt(6) + 1;
-        secondRoll = diceRoll.nextInt(6) + 1;
-
-        while (true){
+        while (true) {
             if (firstRoll + secondRoll == userInput) {
                 System.out.println(firstRoll + " and " + secondRoll + " = " + userInput);
                 break;
-            }
-            else {
-                int rollSum = firstRoll + secondRoll;
-                System.out.println(firstRoll + " and " + secondRoll + " = " + rollSum);
-                firstRoll = diceRoll.nextInt(6) + 1;
-                secondRoll = diceRoll.nextInt(6) + 1;
+            } else {
+                rollOutput(firstRoll, secondRoll);
+                firstRoll = roll();
+                secondRoll = roll();
             }
         }
+
     }
+
+    public static int roll() {
+        Random diceRoll = new Random();
+        return diceRoll.nextInt(6) + 1;
+    }
+
+    public static void rollOutput(int firstRoll, int secondRoll) {
+        int rollSum = firstRoll + secondRoll;
+        System.out.println(firstRoll + " and " + secondRoll + " = " + rollSum);
+    }
+
 }

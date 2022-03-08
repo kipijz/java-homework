@@ -15,7 +15,8 @@ public class Exercise5 {
 
         System.out.print(firstWord);
 
-        int dotNum = 30 - firstWord.length() - secondWord.length();
+        int totalLineLength = 30;
+        int dotNum = totalLineLength - firstWord.length() - secondWord.length();
 
         for (int i = 0; i < dotNum; i++) {
             System.out.print(".");

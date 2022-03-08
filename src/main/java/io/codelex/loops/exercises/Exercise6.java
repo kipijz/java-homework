@@ -10,7 +10,7 @@ public class Exercise6 {
         fizzBuzz(userNumber);
     }
 
-    public static void fizzBuzz(int number) {
+    private static void fizzBuzz(int number) {
         for (int i = 1; i <= number; i++) {
             boolean notDivided = true;
             if (i % 3 == 0) {

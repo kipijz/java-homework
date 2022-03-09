@@ -20,7 +20,9 @@ public class Exercise4 {
                 doesntContain = false;
             }
         }
-        if (doesntContain) System.out.println("Doesn't contain!");
+        if (doesntContain) {
+            System.out.println("Doesn't contain!");
+        }
 
     }
 }

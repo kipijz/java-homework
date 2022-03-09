@@ -14,7 +14,6 @@ public class Exercise8 {
             String[] listOfWords = {"Kakis", "Suns", "Zivis", "Pele", "Flamingo"};
             Random randomNumber = new Random();
             String chosenWord = listOfWords[randomNumber.nextInt(listOfWords.length)];
-            String chosenWordGuessing;
             String allMisses = "";
 //            System.out.println(chosenWord);
             int maxTries = 10;
@@ -36,7 +35,7 @@ public class Exercise8 {
 
 
             System.out.print("Guess: ");
-            userGuess[index] = scanner.next().charAt(0);
+            userGuess[index] = scanner.next().toLowerCase().charAt(0);
             index++;
             System.out.println();
 
@@ -50,31 +49,19 @@ public class Exercise8 {
 
 
                 System.out.print("Word: ");
-                for (int i = 0; i < chosenWord.length(); i++) {
-                    boolean match = false;
-                    for (int j = 0; j < userGuess.length; j++) {
-                        if (chosenWord.charAt(i) == userGuess[j]) {
-                            System.out.print(userGuess[j]);
-                            match = true;
-                            break;
-                        }
-                    }
-                    if (!match) {
-                        System.out.print("_ ");
-                    }
-                }
+
+                printWord(chosenWord, userGuess);
+
                 System.out.println();
 
 
                 System.out.print("Misses: ");
+
                 for (int i = 0; i < chosenWord.length(); i++) {
-                    for (int j = 0; j < userGuess.length; j++) {
-                        if (chosenWord.charAt(i) == userGuess[j]) {
-                            totalMiss = false;
-                            break;
-                        }
+                    if (chosenWord.toLowerCase().charAt(i) == userGuess[index - 1]) {
+                        totalMiss = false;
+                        break;
                     }
-                    if (!totalMiss) break;
                 }
 
                 if (totalMiss) {
@@ -82,23 +69,21 @@ public class Exercise8 {
                     System.out.println(allMisses);
                     maxTries--;
                 }
-                System.out.println();
-
-                int howManyGuessed = 0;
-                for (int i = 0; i < chosenWord.length(); i++) {
-                    for (int j = 0; j < userGuess.length; j++) {
-                        if (chosenWord.charAt(i) == userGuess[j]) {
-                            howManyGuessed++;
-                            break;
-                        }
-                    }
+                if (!totalMiss) {
+                    System.out.println(allMisses);
                 }
 
-                if (howManyGuessed == chosenWord.length()) isCompleted = true;
+                System.out.println();
+
+
+                int howManyGuessed = howManyGuessedMethod(chosenWord, userGuess);
+
+                if (howManyGuessed == chosenWord.length()) {
+                    isCompleted = true;
+                }
+
                 if (isCompleted) {
-                    System.out.println("YOU GOT IT");
-                    System.out.println("Play again or quit?");
-                    gameBeingPlayed = false;
+                    gameBeingPlayed = guessedTheWordMethod();
                     if (!Objects.equals(scanner.next(), "again")) {
                         answer = "quit";
                         break;
@@ -106,9 +91,7 @@ public class Exercise8 {
                 }
 
                 if (maxTries < 0) {
-                    System.out.println("No more tries");
-                    System.out.println("Play again or quit?");
-                    gameBeingPlayed = false;
+                    gameBeingPlayed = failedToGuessTheWordMethod();
                     if (!Objects.equals(scanner.next(), "again")) {
                         answer = "quit";
                         break;
@@ -123,7 +106,51 @@ public class Exercise8 {
                     System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
                 }
 
+
             } while (gameBeingPlayed);
         } while (answer.equals("again"));
     }
+
+    private static void printWord(String chosenWord, char[] userGuess) {
+        for (int i = 0; i < chosenWord.length(); i++) {
+            boolean match = false;
+            for (int j = 0; j < userGuess.length; j++) {
+                if (chosenWord.toLowerCase().charAt(i) == userGuess[j]) {
+                    System.out.print(chosenWord.charAt(i));
+                    match = true;
+                    break;
+                }
+            }
+            if (!match) {
+                System.out.print("_ ");
+            }
+        }
+    }
+
+    public static int howManyGuessedMethod(String chosenWord, char[] userGuess) {
+        int howManyGuessed = 0;
+        for (int i = 0; i < chosenWord.length(); i++) {
+            for (int j = 0; j < userGuess.length; j++) {
+                if (chosenWord.toLowerCase().charAt(i) == userGuess[j]) {
+                    howManyGuessed++;
+                    break;
+                }
+            }
+        }
+        return howManyGuessed;
+    }
+
+    public static  boolean guessedTheWordMethod() {
+        System.out.println("YOU GOT IT");
+        System.out.println("Play again or quit?");
+        return false;
+    }
+
+    public static  boolean failedToGuessTheWordMethod() {
+        System.out.println("No more tries");
+        System.out.println("Play again or quit?");
+        return false;
+    }
+
+
 }

@@ -22,9 +22,7 @@ public class Exercise6 {
 
         int[] secondArray = firstArray.clone();
 
-        for (int i = 0; i < secondArray.length ; i++) {
-            if (i + 1 == secondArray.length) secondArray[i] -= 7;
-        }
+        firstArray[firstArray.length - 1] = 7;
 
         System.out.println("Array 1: " + Arrays.toString(firstArray));
         System.out.println("Array 2: " + Arrays.toString(secondArray));

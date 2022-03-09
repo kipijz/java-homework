@@ -12,8 +12,12 @@ public class Exercise5 {
 //        fixme
 
         for (int i = 0; i < myArray.length; i++) {
-            if (myArray[i] == 36) indexOfElement36 = i;
-            else if (myArray[i] == 29) indexOfElement29 = i;
+            if (myArray[i] == 36) {
+                indexOfElement36 = i;
+            }
+            if (myArray[i] == 29) {
+                indexOfElement29 = i;
+            }
         }
 
 //        Expected output:

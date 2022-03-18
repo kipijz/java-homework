@@ -1,8 +1,6 @@
 package io.codelex.classesandobjects.practice.videostore;
 
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Objects;
 
 public class VideoStore {
     //ArrayList, priekš visiem videos
@@ -16,7 +14,7 @@ public class VideoStore {
     //Metode, kas meklē vai iekš ArrayList ir tāda filma pēc title, ja ir, tad nomaina boolean isCheckedOut uz false
     public void checkOutVideo(String title) {
         for (int i = 0; i < videos.size(); i++) {
-            if (Objects.equals(videos.get(i).getTitle(), title)) {
+            if (videos.get(i).getTitle().equals(title)) {
                 videos.get(i).checkedOut();
                 System.out.println("The percentage of users that liked this video: %" + videos.get(i).calculateRating());
                 break;
@@ -26,7 +24,7 @@ public class VideoStore {
     //Tas pats, kas 16. rindā, bet nomaina  boolean isCheckedOut uz true
     public void returnVideo(String title, int rating) {
         for (int i = 0; i < videos.size(); i++) {
-            if (Objects.equals(videos.get(i).getTitle(), title)) {
+            if (videos.get(i).getTitle().equals(title)) {
                 videos.get(i).checkedIn();
                 videos.get(i).recieveRating(rating);
                 break;

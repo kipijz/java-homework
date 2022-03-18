@@ -4,11 +4,10 @@ import java.util.Scanner;
 
 public class VideoStoreTest {
     private static final int COUNT_OF_MOVIES = 3;
-    static VideoStore videoStore = new VideoStore(); //kāpēc jālieto static, ja viņš it kā ir scope, kurš ietver visas metodes (piem, fillVideoStore)?
+    static VideoStore videoStore = new VideoStore();
 
     public static void main(String[] args) {
         final Scanner keyboard = new Scanner(System.in);
-
 
         while (true) {
             System.out.println("Choose the operation you want to perform ");
@@ -19,23 +18,13 @@ public class VideoStoreTest {
 
             int n = keyboard.nextInt();
             switch (n) {
-                case 0:
-                    System.exit(0);
-                case 1:
-                    fillVideoStore(keyboard);
-                    break;
-                case 2:
-                    rentVideo(keyboard);
-                    break;
-                case 3:
-                    returnVideo(keyboard);
-                    break;
-                default:
-                    break;
+                case 0 -> System.exit(0);
+                case 1 -> fillVideoStore(keyboard);
+                case 2 -> rentVideo(keyboard);
+                case 3 -> returnVideo(keyboard);
+                default -> {
+                }
             }
-
-
-
         }
     }
 

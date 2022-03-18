@@ -6,11 +6,11 @@ public class Test {
     public static void main(String[] args) {
         double balance;
         double annualInterest;
-        double interestEarned = 0;
+        double interestEarned;
         double deposit;
-        double depositCounter = 0;
+        double depositCounter;
         double withdraw;
-        double withdrawCounter = 0;
+        double withdrawCounter;
         int monthsPassed;
         Scanner scanner = new Scanner(System.in);
 

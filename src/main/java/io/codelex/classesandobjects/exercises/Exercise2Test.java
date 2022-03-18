@@ -23,8 +23,8 @@ public class Exercise2Test {
         Exercise2 car = new Exercise2(startKilometers, endKilometers, liters);
 
         System.out.println( "Kilometers per liter are "  + car.calculateConsumption() );
-        if (car.gasHog()) System.out.println("This car is a gas hog");
-        if (car.economyCar()) System.out.println("This car is a an economy car");
+        if (car.gasHog()) {System.out.println("This car is a gas hog");}
+        if (car.economyCar()) {System.out.println("This car is a an economy car");}
 
 
 
@@ -58,8 +58,12 @@ public class Exercise2Test {
 
         car.calculateConsumption();
         System.out.println( "Kilometers per liter are "  + car.calculateConsumption() );
-        if (car.gasHog()) System.out.println("This car is a gas hog");
-        if (car.economyCar()) System.out.println("This car is a an economy car");
+        if (car.gasHog()) {
+            System.out.println("This car is a gas hog");
+        }
+        else if (car.economyCar()) {
+            System.out.println("This car is a an economy car");
+        }
 
         System.out.println();
 
@@ -73,8 +77,12 @@ public class Exercise2Test {
 
         car.calculateConsumption();
         System.out.println( "Kilometers per liter are "  + car.calculateConsumption() );
-        if (car.gasHog()) System.out.println("This car is a gas hog");
-        if (car.economyCar()) System.out.println("This car is a an economy car");
+        if (car.gasHog()) {
+            System.out.println("This car is a gas hog");
+        }
+        else if (car.economyCar()) {
+            System.out.println("This car is a an economy car");
+        }
 
     }
 }

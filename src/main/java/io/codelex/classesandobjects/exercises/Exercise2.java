@@ -28,13 +28,11 @@ public class Exercise2 {
     }
 
     public boolean gasHog() {
-        if (calculateConsumption() > 15) return true;
-        else return false;
+        return calculateConsumption() > 15;
     }
 
     public boolean economyCar() {
-        if (calculateConsumption() < 5) return true;
-        else return false;
+        return calculateConsumption() < 5;
     }
 
 }

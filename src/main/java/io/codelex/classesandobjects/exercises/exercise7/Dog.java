@@ -2,11 +2,11 @@ package io.codelex.classesandobjects.exercises.exercise7;
 
 public class Dog {
     private String name;
-    private String sex;
+    private DogSex sex;
     private Dog dogFather;
     private Dog dogMother;
 
-    public Dog(String name, String sex) {
+    public Dog(String name, DogSex sex) {
         this.name = name;
         this.sex = sex;
     }
@@ -27,14 +27,20 @@ public class Dog {
         this.dogMother = dogMother;
     }
 
-    public String fathersName () {
-        if (dogFather != null) return dogFather.name;
-        else return "Unknown";
+    public String fathersName() {
+        if (dogFather != null) {
+            return dogFather.name;
+        } else {
+            return "Unknown";
+        }
     }
 
     public boolean hasSameMotherAs(Dog otherDog) {
-        if (this.dogMother == otherDog.dogMother) return true;
-        else return false;
+        if (otherDog != null) {
+            return this.dogMother == otherDog.dogMother;
+        } else {
+            return false;
+        }
     }
 
     @Override

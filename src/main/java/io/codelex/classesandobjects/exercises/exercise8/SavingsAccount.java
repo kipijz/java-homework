@@ -6,6 +6,7 @@ public class SavingsAccount {
     private double depositCounter;
     private double withdrawCounter;
     private double interestCounter;
+    private static final int MONTHS_IN_A_YEAR = 12;
 
     public SavingsAccount(double balance) {
         this.balance = balance;
@@ -26,8 +27,8 @@ public class SavingsAccount {
     }
 
     public void addMonthlyInterest() {
-        interestCounter += this.balance * (this.annualInterest) / 12;
-        balance += balance * (this.annualInterest / 12);
+        interestCounter += this.balance * (this.annualInterest) / MONTHS_IN_A_YEAR;
+        balance += balance * (this.annualInterest / MONTHS_IN_A_YEAR);
     }
 
     public double getBalance() {

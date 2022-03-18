@@ -17,8 +17,12 @@ public class BankAccount {
 
     @Override
     public String toString() {
-        if (balance < 0) return name + ", -$" + String.format("%.2f", balance * -1);
-        else return name + ", $" + String.format("%.2f", balance);
+        if (balance < 0) {
+            return name + ", -$" + String.format("%.2f", balance * -1);
+        }
+        else {
+            return name + ", $" + String.format("%.2f", balance);
+        }
 
 
     }

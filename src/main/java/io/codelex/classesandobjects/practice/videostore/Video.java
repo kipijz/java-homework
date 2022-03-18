@@ -4,9 +4,9 @@ public class Video {
     private String title;
     private boolean isCheckedOut;
     private int rating;
-    private int totalGottenRatings = 0;
-    private int badRating = 0;
-    private int goodRating = 0;
+    private int totalGottenRatings;
+    private int badRating;
+    private int goodRating;
 
     public Video(String title) {
         this.title = title;

@@ -1,7 +1,5 @@
 package io.codelex.classesandobjects.exercises.exercise4;
 
-import java.util.Objects;
-
 public class Movie {
     private String title;
     private String studio;
@@ -19,15 +17,24 @@ public class Movie {
         this.rating = "PG";
     }
 
-    public Movie[] getPG(Movie[] array) {
+    public static Movie[] getPG(Movie[] array) {
         Movie[] sortedArray = new Movie[array.length];
         int index = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (Objects.equals(array[i].toString(), "PG")) sortedArray[index] = array[i];
-            index++;
+        for (Movie movie : array) {
+            if (movie.rating.equals("PG")) {
+                sortedArray[index] = movie;
+                index++;
+            }
         }
         return sortedArray;
     }
 
-
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "title='" + title + '\'' +
+                ", studio='" + studio + '\'' +
+                ", rating='" + rating + '\'' +
+                '}';
+    }
 }

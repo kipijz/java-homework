@@ -77,3 +77,64 @@ parameters:
 
 In addition, the Runner enum should contain the static getFitnessLevel() method, which takes any time
 result of a marathon run, and as a result should return a specific Runner object based on the given time.
+
+## Exercise #5
+
+Package: imperialToMetric
+
+1) Create a ConversionType enum class with the constants METERS_TO_YARDS, YARDS_TO_METERS, CENTIMETERS_TO_ICHES, INCHES_TO_CENTIMETERS, KILOMETERS_TO_MILES, MILES_TO_KILOMETERS. Enum should have a Converter type parameter used to perform calculations for a given type.
+
+2) Then create a MeasurementConverter class that will have the convert(int value, ConvertionType conversionType) method and based on the value and type of conversion, used the Converter of the given type and returned the result.
+
+3) Create class to test functionality
+
+## Exercise #6
+
+Package: parcels
+
+Parcel validator
+1) Create interface Validatable, which will include a method boolean validate() in its declaration.
+
+2) Create a Parcel class with the parameters:
+   • int xLength
+   • int yLength
+   • int zLength
+   • float weight
+   • boolean isExpress
+
+3) Implement the Validatable interface in Parcel class
+
+The validate() method should verify that the sum of the dimensions (x, y, z) does not exceed 300, whether each size is not less than 30, whether the weight does not exceed 30.0 for isExpress = false or 15.0 for isExpress = true. In case of errors, it should inform the user about them.
+
+4) Create class to test functionality
+
+
+## Exercise #7
+
+Package: computers
+
+Create a Computer class with fields defining computer features: processor, ram, graphics card, company and model. Implement setters, getters, constructor with all fields, toString(), equals() and hashcode() methods.
+Instantiate several objects and check how the methods work.
+
+
+## Exercise #8
+
+Package: computers
+
+Create a Laptop class extending the Computer class from the previous task. The Laptop class should additionally contain the battery parameter.
+Implement additional getters, setters, constructor and overwrite the toString(), equals() and hashcode() methods accordingly.
+Use a reference to parent class methods (from Laptop class call Computer methods).
+
+## Exercise #9
+
+Create an abstract Shape class with the abstract methods calculatePerimeter() for calculating the
+perimeter and calculateArea() for calculating the area.
+
+Create Rectangle, Triangle, Hexagon classes, extending the Shape class, and implementing abstract methods accordingly. Verify the solution correctness.
+
+## Exercise #10
+
+Create an abstract 3DShape class that extends the Shape class from the previous task. Add an additional
+method calculateVolume().
+
+Create Cone and Qube classes by extending the 3DShape class, properly implementing abstract methods. Verify the solution correctness.

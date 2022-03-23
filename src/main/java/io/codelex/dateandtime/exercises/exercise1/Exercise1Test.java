@@ -18,7 +18,7 @@ public class Exercise1Test {
 
     }
 
-    public static LocalDate addDate(Scanner scan) {
+    private static LocalDate addDate(Scanner scan) {
         return LocalDate.parse(scan.next());
     }
 }

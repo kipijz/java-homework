@@ -35,7 +35,7 @@ public class Exercise2Test {
 
 
     //pārbauda vai update datums ir pirms vai pēc serverLaunchDay
-    public static boolean checkUpdateDate(String updateYear, String updateMonth, LocalDate serverLaunchDay) {
+    private static boolean checkUpdateDate(String updateYear, String updateMonth, LocalDate serverLaunchDay) {
         boolean isValidUpdateDate = true;
         String firstDay = "";
         if (serverLaunchDay.getDayOfMonth() < 10) {

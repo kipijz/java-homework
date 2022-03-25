@@ -15,18 +15,13 @@ import static java.nio.file.Files.readAllLines;
 public class FlightPlanner {
     private static final Charset charset = Charset.defaultCharset();
     private static final String file = "/collections/flights.txt";
+    private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException, URISyntaxException {
         flightPlanner();
     }
 
     private static void flightPlanner() throws URISyntaxException, IOException {
-        Scanner scanner = new Scanner(System.in);
-
-        final Path path = Paths.get(Histogram.class.getResource(file).toURI());
-        List<String> linesList = readAllLines(path, charset);
-        HashMap<String, ArrayList> fromToHashMap = getFlights(linesList);
-        ArrayList<String> usersRoute = new ArrayList<>();
         boolean isInputValid;
         int userChoice;
         do {
@@ -43,6 +38,14 @@ public class FlightPlanner {
             }
         } while (!isInputValid);
 
+        displayPlanner(userChoice);
+    }
+
+    private static void displayPlanner(int userChoice) throws URISyntaxException, IOException {
+        final Path path = Paths.get(Histogram.class.getResource(file).toURI());
+        List<String> linesList = readAllLines(path, charset);
+        HashMap<String, ArrayList> fromToHashMap = getFlights(linesList);
+        ArrayList<String> usersRoute = new ArrayList<>();
 
         if (userChoice == 1) {
             displayList(linesList);
@@ -50,6 +53,7 @@ public class FlightPlanner {
             scanner.nextLine();
             String userFirstCityChoice = scanner.nextLine();
             usersRoute.add(userFirstCityChoice);
+            System.out.println("Next available cities: ");
             System.out.println(fromToHashMap.get(userFirstCityChoice));
 
             boolean choosesNext = true;
@@ -57,6 +61,7 @@ public class FlightPlanner {
             while (choosesNext) {
                 System.out.println("Choose the next city: ");
                 String usersNextCityChoice = scanner.nextLine();
+
                 if (userFirstCityChoice.equals(usersNextCityChoice)) {
                     choosesNext = false;
                     usersRoute.add(usersNextCityChoice);
@@ -65,11 +70,20 @@ public class FlightPlanner {
                     usersRoute.add(usersNextCityChoice);
                 }
             }
-
-            System.out.println("Your route: ");
-            System.out.println(usersRoute.toString());
+            displayUsersRoute(usersRoute);
         } else {
             System.out.println("Exiting!");
+        }
+    }
+
+    private static void displayUsersRoute(ArrayList usersRoute) {
+        System.out.println("Your route was: ");
+        for (int i = 0; i < usersRoute.size(); i++) {
+            if (i + 1 == usersRoute.size()) {
+                System.out.print(usersRoute.get(i));
+                break;
+            }
+            System.out.print(usersRoute.get(i) + " -> ");
         }
     }
 

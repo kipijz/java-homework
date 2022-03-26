@@ -23,16 +23,15 @@ public class DatePeriod {
     public DatePeriod intersection(DatePeriod datePassed) {
         List<LocalDate> listOfDates = this.startDate.datesUntil((this.endDate.plusDays(1))).toList();
         List<LocalDate> listOfDatesPassed = datePassed.startDate.datesUntil(datePassed.endDate.plusDays(1)).toList();
-        LocalDate startDateForIntersection = null;
-        LocalDate endDateForIntersection = null;
 
-        startDateForIntersection = findStartDate(listOfDates, listOfDatesPassed, startDateForIntersection);
-        endDateForIntersection = findEndDate(listOfDates, listOfDatesPassed, endDateForIntersection);
+        LocalDate startDateForIntersection = findStartDate(listOfDates, listOfDatesPassed);
+        LocalDate endDateForIntersection = findEndDate(listOfDates, listOfDatesPassed);
 
         return new DatePeriod(startDateForIntersection, endDateForIntersection);
     }
 
-    private LocalDate findStartDate(List<LocalDate> listOfDates, List<LocalDate> listOfDatesPassed, LocalDate startDateForIntersection) {
+    private LocalDate findStartDate(List<LocalDate> listOfDates, List<LocalDate> listOfDatesPassed) {
+        LocalDate startDateForIntersection = null;
         boolean foundStartDateForIntersection = false;
         for (int i = 0; i < listOfDates.size(); i++) {
             for (int j = 0; j < listOfDatesPassed.size(); j++) {
@@ -49,7 +48,8 @@ public class DatePeriod {
         return startDateForIntersection;
     }
 
-    private LocalDate findEndDate(List<LocalDate> listOfDates, List<LocalDate> listOfDatesPassed, LocalDate endDateForIntersection) {
+    private LocalDate findEndDate(List<LocalDate> listOfDates, List<LocalDate> listOfDatesPassed) {
+        LocalDate endDateForIntersection = null;
         for (int i = 0; i < listOfDates.size(); i++) {
             for (int j = 0; j < listOfDatesPassed.size(); j++) {
                 if (listOfDates.get(i).isEqual(listOfDatesPassed.get(j))) {

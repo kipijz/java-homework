@@ -1,21 +1,31 @@
 package io.codelex.polymorphism.practice.exercise1;
 
-public class Bmw {
+public class Bmw implements Car{
     private Integer currentSpeed = 0;
+    private String carName;
 
+    public Bmw(String carName) {
+        this.carName = carName;
+    }
+
+    @Override
     public void speedUp() {
         currentSpeed += 12;
     }
 
+    @Override
     public void slowDown() {
         currentSpeed += 12;
     }
 
+    @Override
     public String showCurrentSpeed() {
         return currentSpeed.toString();
     }
 
-    public void startEngine() {
-        System.out.println("Rrrrrrr.....");
+    @Override
+    public String showCarName() {
+        return carName;
     }
+
 }

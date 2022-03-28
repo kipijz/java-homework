@@ -7,11 +7,9 @@ public class Main {
         CardinalPoints east = CardinalPoints.EAST;
         CardinalPoints west = CardinalPoints.WEST;
 
-        System.out.println(north.getDirection() + ":" + north.getText() + ":" + north.ordinal());
-        System.out.println(south.getDirection() + ":" + south.getText() + ":" + south.ordinal());
-        System.out.println(east.getDirection() + ":" + east.getText() + ":" + east.ordinal());
-        System.out.println(west.getDirection() + ":" + west.getText() + ":" + west.ordinal());
-
-
+        System.out.println(north.toString() + ":" + north.getText() + ":" + north.ordinal());
+        System.out.println(south + ":" + south.getText() + ":" + south.ordinal());
+        System.out.println(east + ":" + east.getText() + ":" + east.ordinal());
+        System.out.println(west + ":" + west.getText() + ":" + west.ordinal());
     }
 }

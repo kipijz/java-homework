@@ -1,6 +1,6 @@
 package io.codelex.oop.persons;
 
-public class Customer extends Person{
+public class Customer extends Person {
 
     private String customerId;
     private int purchaseCount;

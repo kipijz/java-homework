@@ -1,15 +1,15 @@
 package io.codelex.oop.parcels;
 
 public class Parcel implements Validatable {
+    private static final int MAX_COMBINED_DIMENSIONS = 300;
+    private static final int MIN_SIZE_DIMENSION = 30;
+    private static final float MAX_WEIGHT_FOR_EXPRESS = 15.0f;
+    private static final float MAX_WEIGHT_FOR_NON_EXPRESS = 30.0f;
     private int xLength;
     private int yLength;
     private int zLength;
     private float weight;
     private boolean isExpress;
-    private static final int MAX_COMBINED_DIMENSIONS = 300;
-    private static final int MIN_SIZE_DIMENSION = 30;
-    private static final float MAX_WEIGHT_FOR_EXPRESS = 15.0f;
-    private static final float MAX_WEIGHT_FOR_NON_EXPRESS = 30.0f;
 
     public Parcel(int xLength, int yLength, int zLength, float weight, boolean isExpress) {
         this.xLength = xLength;

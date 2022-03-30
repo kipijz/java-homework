@@ -1,6 +1,6 @@
 package io.codelex.oop.cars;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Car {
@@ -8,10 +8,10 @@ public class Car {
     private String model;
     private double price;
     private int yearOfManufacture;
-    private ArrayList<Manufacturer> manufacturers;
+    private List<Manufacturer> manufacturers;
     private EngineType engineType;
 
-    public Car(String name, String model, double price, int yearOfManufacture, ArrayList<Manufacturer> manufacturers, EngineType engineType) {
+    public Car(String name, String model, double price, int yearOfManufacture, List<Manufacturer> manufacturers, EngineType engineType) {
         this.name = name;
         this.model = model;
         this.price = price;
@@ -52,11 +52,11 @@ public class Car {
         this.yearOfManufacture = yearOfManufacture;
     }
 
-    public ArrayList<Manufacturer> getManufacturers() {
+    public List<Manufacturer> getManufacturers() {
         return manufacturers;
     }
 
-    public void setManufacturers(ArrayList<Manufacturer> manufacturers) {
+    public void setManufacturers(List<Manufacturer> manufacturers) {
         this.manufacturers = manufacturers;
     }
 
@@ -85,7 +85,8 @@ public class Car {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
-        return Double.compare(car.price, price) == 0 && yearOfManufacture == car.yearOfManufacture && Objects.equals(name, car.name) && Objects.equals(model, car.model) && Objects.equals(manufacturers, car.manufacturers) && engineType == car.engineType;
+        return Double.compare(car.price, price) == 0 && yearOfManufacture == car.yearOfManufacture && Objects.equals(name, car.name)
+                && Objects.equals(model, car.model) && Objects.equals(manufacturers, car.manufacturers) && engineType == car.engineType;
     }
 
     @Override

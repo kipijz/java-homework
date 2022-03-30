@@ -43,13 +43,13 @@ public class MainSecondPart {
 
         // 4. returning cars with a V12 engine,
         System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-        System.out.println("With V12: ");
-        carService.returnCarListWithV12();
+        System.out.println("With (user given engine type): ");
+        carService.returnCarListWithGivenEngine(EngineType.V12);
 
         // 5. returning cars produced before 1999,
         System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-        System.out.println("Produced before 1999: ");
-        carService.returnCarListBefore1999();
+        System.out.println("Produced before (user given year): ");
+        carService.returnCarListBeforeGivenYear(1999);
 
         // 6. returning the most expensive car,
         System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
@@ -63,8 +63,8 @@ public class MainSecondPart {
 
         // 8. returning the car with at least 3 manufacturers,
         System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-        System.out.println("At least 3 manufacturers: ");
-        carService.returnCarListAtLeast3Manufacturers();
+        System.out.println("At least (user given count) manufacturers: ");
+        carService.returnCarListAtLeastGivenManufacturers(3);
 
         // 9. returning a list of all cars sorted according to the passed parameter: ascending / descending,
         //sorting by name of the car

@@ -14,12 +14,20 @@ public enum Runner {
     }
 
     public static Runner getFitnessLevel(int userRunInput) {
-        if (userRunInput <= ADVANCED.maxMarathonRunTime && userRunInput >= ADVANCED.minMarathonRunTime) {
+        if (isAdvanced(userRunInput)) {
             return ADVANCED;
-        } else if (userRunInput <= INTERMEDIATE.maxMarathonRunTime && userRunInput >= INTERMEDIATE.minMarathonRunTime) {
+        } else if (isIntermediate(userRunInput)) {
             return INTERMEDIATE;
         } else {
             return BEGINNER;
         }
+    }
+
+    private static boolean isAdvanced(int userRunInput) {
+        return userRunInput <= ADVANCED.maxMarathonRunTime && userRunInput >= ADVANCED.minMarathonRunTime;
+    }
+
+    private static boolean isIntermediate(int userRunInput) {
+        return userRunInput <= INTERMEDIATE.maxMarathonRunTime && userRunInput >= INTERMEDIATE.minMarathonRunTime;
     }
 }

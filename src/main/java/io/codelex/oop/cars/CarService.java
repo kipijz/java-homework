@@ -34,17 +34,17 @@ public class CarService  {
         }
     }
 
-    public void returnCarListWithV12() {
+    public void returnCarListWithGivenEngine(EngineType type) {
         for (Car car : this.carList) {
-            if (car.getEngineType() == EngineType.V12) {
+            if (car.getEngineType() == type) {
                 System.out.println(car);
             }
         }
     }
 
-    public void returnCarListBefore1999() {
+    public void returnCarListBeforeGivenYear(int year) {
         for (Car car : this.carList) {
-            if (car.getYearOfManufacture() < 1999) {
+            if (car.getYearOfManufacture() < year) {
                 System.out.println(car);
             }
         }
@@ -60,9 +60,9 @@ public class CarService  {
         System.out.println(element);
     }
 
-    public void returnCarListAtLeast3Manufacturers() {
+    public void returnCarListAtLeastGivenManufacturers(int countOfManufacturers) {
         for (Car car : this.carList) {
-            if (car.getManufacturers().size() >= 3) {
+            if (car.getManufacturers().size() >= countOfManufacturers) {
                 System.out.println(car);
             }
         }

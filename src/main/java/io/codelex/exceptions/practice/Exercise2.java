@@ -10,7 +10,8 @@ public class Exercise2 {
         try {
             methodB();
         } catch (ArithmeticException e) {
-            System.out.println("A");
+            e.printStackTrace();
+            throw e;
         }
     }
 
@@ -18,7 +19,8 @@ public class Exercise2 {
         try {
             methodC();
         } catch (ArithmeticException e) {
-            System.out.println("B");
+            e.printStackTrace();
+            throw e;
         }
     }
 
@@ -26,7 +28,8 @@ public class Exercise2 {
         try {
             int divided = 21 / 0;
         } catch (ArithmeticException e) {
-            System.out.println("C");
+            e.printStackTrace();
+            throw e;
         }
     }
 }

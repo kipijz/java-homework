@@ -1,24 +1,17 @@
 package io.codelex.advanced.exercise1;
 
+import java.math.BigDecimal;
+
 public class DebitCard extends Card {
-    public DebitCard(int cardNumber, String owner, int CCV, int balance) {
+    public DebitCard(int cardNumber, String owner, int CCV, BigDecimal balance) {
         super(cardNumber, owner, CCV, balance);
     }
 
     @Override
-    public void addMoney(int sum) {
-        setBalance(getBalance() + sum);
-        if (getBalance() > Card.BIG_FUNDS_WARNING_NUMBER) {
+    public void addMoney(BigDecimal sum) {
+        super.addMoney(sum);
+        if (getBalance().compareTo(Card.BIG_FUNDS_WARNING_NUMBER) > 0) {
             System.out.println("Warning: Too much money");
-        }
-    }
-
-    @Override
-    public void withdrawMoney(int sum) throws NotEnoughFundsException {
-        if (sum > getBalance()) {
-            throw new NotEnoughFundsException("Not enough funds in your account!");
-        } else {
-            setBalance(getBalance() - sum);
         }
     }
 }

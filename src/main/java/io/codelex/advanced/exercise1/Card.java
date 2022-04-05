@@ -1,14 +1,16 @@
 package io.codelex.advanced.exercise1;
 
+import java.math.BigDecimal;
+
 public abstract class Card {
-    public static final int LOW_FUNDS_WARNING_NUMBER = 100;
-    public static final int BIG_FUNDS_WARNING_NUMBER = 10000;
+    public static final BigDecimal LOW_FUNDS_WARNING_NUMBER = BigDecimal.valueOf(100);
+    public static final BigDecimal BIG_FUNDS_WARNING_NUMBER = BigDecimal.valueOf(10000);
     private int cardNumber;
     private String owner;
     private int CCV;
-    private int balance;
+    private BigDecimal balance;
 
-    public Card(int cardNumber, String owner, int CCV, int balance) {
+    public Card(int cardNumber, String owner, int CCV, BigDecimal balance) {
         this.cardNumber = cardNumber;
         this.owner = owner;
         this.CCV = CCV;
@@ -39,15 +41,22 @@ public abstract class Card {
         this.CCV = CCV;
     }
 
-    public int getBalance() {
+    public BigDecimal getBalance() {
         return balance;
     }
 
-    public void setBalance(int balance) {
+    public void setBalance(BigDecimal balance) {
         this.balance = balance;
     }
 
-    public abstract void addMoney(int sum);
+    public void addMoney(BigDecimal sum) {
+        setBalance(getBalance().add(sum));
+    }
 
-    public abstract void withdrawMoney(int sum) throws NotEnoughFundsException;
+    public void withdrawMoney(BigDecimal sum) throws NotEnoughFundsException {
+        if (sum.compareTo(getBalance()) > 0) {
+            throw new NotEnoughFundsException("Not enough funds in your account!");
+        }
+        setBalance(getBalance().subtract(sum));
+    }
 }

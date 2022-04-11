@@ -13,9 +13,9 @@ import java.util.Scanner;
 import static java.nio.file.Files.readAllLines;
 
 public class FlightPlanner {
-    private static final Charset charset = Charset.defaultCharset();
-    private static final String file = "/collections/flights.txt";
-    private static final Scanner scanner = new Scanner(System.in);
+    private static final Charset CHARSET = Charset.defaultCharset();
+    private static final String FILE = "/collections/flights.txt";
+    private static final Scanner SCANNER = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException, URISyntaxException {
         flightPlanner();
@@ -28,7 +28,7 @@ public class FlightPlanner {
             System.out.println("What would you like to do: ");
             System.out.println("To display list of the cities press 1");
             System.out.println("To exit program press 3");
-            userChoice = scanner.nextInt();
+            userChoice = SCANNER.nextInt();
 
             if (userChoice != 1 && userChoice != 3) {
                 System.out.println("Invalid input, try again...");
@@ -42,16 +42,16 @@ public class FlightPlanner {
     }
 
     private static void displayPlanner(int userChoice) throws URISyntaxException, IOException {
-        final Path path = Paths.get(Histogram.class.getResource(file).toURI());
-        List<String> linesList = readAllLines(path, charset);
+        final Path path = Paths.get(Histogram.class.getResource(FILE).toURI());
+        List<String> linesList = readAllLines(path, CHARSET);
         HashMap<String, ArrayList> fromToHashMap = getFlights(linesList);
         ArrayList<String> usersRoute = new ArrayList<>();
 
         if (userChoice == 1) {
             displayList(linesList);
             System.out.println("Type the city from which you'd like to start: ");
-            scanner.nextLine();
-            String userFirstCityChoice = scanner.nextLine();
+            SCANNER.nextLine();
+            String userFirstCityChoice = SCANNER.nextLine();
             usersRoute.add(userFirstCityChoice);
             System.out.println("Next available cities: ");
             System.out.println(fromToHashMap.get(userFirstCityChoice));
@@ -60,7 +60,7 @@ public class FlightPlanner {
 
             while (choosesNext) {
                 System.out.println("Choose the next city: ");
-                String usersNextCityChoice = scanner.nextLine();
+                String usersNextCityChoice = SCANNER.nextLine();
 
                 if (userFirstCityChoice.equals(usersNextCityChoice)) {
                     choosesNext = false;

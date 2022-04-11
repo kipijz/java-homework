@@ -64,31 +64,31 @@ public class Histogram {
             if (Integer.parseInt(s) <= 9 && Integer.parseInt(s) >= 0) {
                 zeroToNine.append("*");
             }
-            if (Integer.parseInt(s) <= 19 && Integer.parseInt(s) >= 10) {
+            else if (Integer.parseInt(s) <= 19) {
                 tenToNineteen.append("*");
             }
-            if (Integer.parseInt(s) <= 29 && Integer.parseInt(s) >= 20) {
+            else if (Integer.parseInt(s) <= 29) {
                 twentyToTwentyNine.append("*");
             }
-            if (Integer.parseInt(s) <= 39 && Integer.parseInt(s) >= 30) {
+            else if (Integer.parseInt(s) <= 39) {
                 thirtyToThirtyNine.append("*");
             }
-            if (Integer.parseInt(s) <= 49 && Integer.parseInt(s) >= 40) {
+            else if (Integer.parseInt(s) <= 49) {
                 fourthyToFourthyNine.append("*");
             }
-            if (Integer.parseInt(s) <= 59 && Integer.parseInt(s) >= 50) {
+            else if (Integer.parseInt(s) <= 59) {
                 fifthyToFifthyNine.append("*");
             }
-            if (Integer.parseInt(s) <= 69 && Integer.parseInt(s) >= 60) {
+            else if (Integer.parseInt(s) <= 69) {
                 sixtyToSixtyNine.append("*");
             }
-            if (Integer.parseInt(s) <= 79 && Integer.parseInt(s) >= 70) {
+            else if (Integer.parseInt(s) <= 79) {
                 seventyToSeventyNine.append("*");
             }
-            if (Integer.parseInt(s) <= 89 && Integer.parseInt(s) >= 80) {
+            else if (Integer.parseInt(s) <= 89) {
                 eightyToEightyNine.append("*");
             }
-            if (Integer.parseInt(s) <= 99 && Integer.parseInt(s) >= 90) {
+            else if (Integer.parseInt(s) <= 99) {
                 ninetyToNinetyNine.append("*");
             } else if (Integer.parseInt(s) == 100) {
                 hundread.append("*");

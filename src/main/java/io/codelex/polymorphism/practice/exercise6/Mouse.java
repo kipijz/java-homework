@@ -1,6 +1,6 @@
 package io.codelex.polymorphism.practice.exercise6;
 
-public class Mouse extends Mammal{
+public class Mouse extends Mammal {
     public Mouse(String animalType, String animalName, double animalWeight, String livingRegion) {
         super(animalType, animalName, animalWeight, livingRegion);
     }
@@ -8,5 +8,10 @@ public class Mouse extends Mammal{
     @Override
     public void makeSound() {
         System.out.println("squeeeeeeek");
+    }
+
+    @Override
+    public boolean isEdible(Food food) {
+        return food instanceof Vegetable;
     }
 }

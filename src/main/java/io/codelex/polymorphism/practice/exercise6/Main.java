@@ -21,7 +21,7 @@ public class Main {
                 getLastAnimal().makeSound();
                 String[] food = scanner.nextLine().split(" ");
                 giveFood(food);
-                if (checkFood()) {
+                if (getLastAnimal().isEdible(getLastFood())) {
                     getLastAnimal().eat(getLastFood());
                     System.out.println(getLastAnimal());
                 } else {
@@ -29,23 +29,6 @@ public class Main {
                 }
             }
         }
-    }
-
-    private static boolean checkFood() {
-        boolean checkFood = false;
-
-        if (getLastAnimal() instanceof Zebra || getLastAnimal() instanceof Mouse) {
-            if (getLastFood() instanceof Vegetable) {
-                checkFood = true;
-            }
-        } else if (getLastAnimal() instanceof Tiger) {
-            if (getLastFood() instanceof Meat) {
-                checkFood = true;
-            }
-        } else if (getLastAnimal() instanceof Cat) {
-            checkFood = true;
-        }
-        return checkFood;
     }
 
     private static void giveFood(String[] food) {

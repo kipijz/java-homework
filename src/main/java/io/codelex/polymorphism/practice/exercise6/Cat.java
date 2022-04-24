@@ -18,6 +18,11 @@ public class Cat extends Feline{
     }
 
     @Override
+    public boolean isEdible(Food food) {
+        return true;
+    }
+
+    @Override
     public String toString() {
         return getAnimalType() +
                 "[" + getAnimalName() +

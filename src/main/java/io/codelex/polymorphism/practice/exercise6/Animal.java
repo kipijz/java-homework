@@ -7,9 +7,9 @@ public abstract class Animal {
     private String animalName;
     private double animalWeight;
     private Integer foodEaten = 0;
-    DecimalFormat decimalFormat = new DecimalFormat("0.#");
+    private static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("0.#");
 
-    public Animal(String animalType, String animalName, double animalWeight) {
+    protected Animal(String animalType, String animalName, double animalWeight) {
         this.animalName = animalName;
         this.animalType = animalType;
         this.animalWeight = animalWeight;
@@ -32,7 +32,7 @@ public abstract class Animal {
     }
 
     public double getAnimalWeight() {
-        return Double.parseDouble(decimalFormat.format(animalWeight));
+        return Double.parseDouble(DECIMAL_FORMAT.format(animalWeight));
     }
 
     public void setAnimalWeight(double animalWeight) {
@@ -52,4 +52,6 @@ public abstract class Animal {
     public void eat(Food food) {
         this.foodEaten += food.getQuantity();
     }
+
+    public abstract boolean isEdible(Food food);
 }

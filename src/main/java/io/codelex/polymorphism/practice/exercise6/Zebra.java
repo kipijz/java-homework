@@ -9,4 +9,9 @@ public class Zebra extends Mammal{
     public void makeSound() {
         System.out.println("hyonhyon");
     }
+
+    @Override
+    public boolean isEdible(Food food) {
+        return food instanceof Vegetable;
+    }
 }

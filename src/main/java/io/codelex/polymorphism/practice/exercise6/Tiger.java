@@ -10,5 +10,10 @@ public class Tiger extends Feline{
     public void makeSound() {
         System.out.println("RAAAAAAAAAAAAAAAAAWR");
     }
+
+    @Override
+    public boolean isEdible(Food food) {
+        return food instanceof Meat;
+    }
 }
 
